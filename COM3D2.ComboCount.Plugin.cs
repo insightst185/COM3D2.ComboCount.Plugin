@@ -11,7 +11,7 @@ using UnityInjector.Attributes;
 namespace COM3D2.ComboCount.Plugin
 {
     [PluginFilter("COM3D2x64"),
-     PluginName("COM3D2.ComboCount.Plugin"), PluginVersion("0.0.0.1")]
+     PluginName("COM3D2.ComboCount.Plugin"), PluginVersion("0.0.0.2")]
 
     public class ComboCount : PluginBase
     {
@@ -31,6 +31,69 @@ namespace COM3D2.ComboCount.Plugin
         private int[] presetPos = new int[MAX_LISTED_MAID];
         private int nowCombo = 0;
         private int latestCombo = 0;
+        // どっかにありそうだけど見つからなかったのでくそコーディング
+        private Dictionary<string, TBody.SlotID> slodIDdic = new Dictionary<string, TBody.SlotID>()
+                                       {
+    {"body",TBody.SlotID.body},
+    {"head",TBody.SlotID.head},
+    {"eye",TBody.SlotID.eye},
+    {"hairF",TBody.SlotID.hairF},
+    {"hairR",TBody.SlotID.hairR},
+    {"hairS",TBody.SlotID.hairS},
+    {"hairT",TBody.SlotID.hairT},
+    {"wear",TBody.SlotID.wear},
+    {"skirt",TBody.SlotID.skirt},
+    {"onepiece",TBody.SlotID.onepiece},
+    {"mizugi",TBody.SlotID.mizugi},
+    {"panz",TBody.SlotID.panz},
+    {"bra",TBody.SlotID.bra},
+    {"stkg",TBody.SlotID.stkg},
+    {"shoes",TBody.SlotID.shoes},
+    {"headset",TBody.SlotID.headset},
+    {"glove",TBody.SlotID.glove},
+    {"accHead",TBody.SlotID.accHead},
+    {"hairAho",TBody.SlotID.hairAho},
+    {"accHana",TBody.SlotID.accHana},
+    {"accHa",TBody.SlotID.accHa},
+    {"accKami_1_",TBody.SlotID.accKami_1_},
+    {"accMiMiR",TBody.SlotID.accMiMiR},
+    {"accKamiSubR",TBody.SlotID.accKamiSubR},
+    {"accNipR",TBody.SlotID.accNipR},
+    {"HandItemR",TBody.SlotID.HandItemR},
+    {"accKubi",TBody.SlotID.accKubi},
+    {"accKubiwa",TBody.SlotID.accKubiwa},
+    {"accHeso",TBody.SlotID.accHeso},
+    {"accUde",TBody.SlotID.accUde},
+    {"accAshi",TBody.SlotID.accAshi},
+    {"accSenaka",TBody.SlotID.accSenaka},
+    {"accShippo",TBody.SlotID.accShippo},
+    {"accAnl",TBody.SlotID.accAnl},
+    {"accVag",TBody.SlotID.accVag},
+    {"kubiwa",TBody.SlotID.kubiwa},
+    {"megane",TBody.SlotID.megane},
+    {"accXXX",TBody.SlotID.accXXX},
+    {"chinko",TBody.SlotID.chinko},
+    {"chikubi",TBody.SlotID.chikubi},
+    {"accHat",TBody.SlotID.accHat},
+    {"kousoku_upper",TBody.SlotID.kousoku_upper},
+    {"kousoku_lower",TBody.SlotID.kousoku_lower},
+    {"seieki_naka",TBody.SlotID.seieki_naka},
+    {"seieki_hara",TBody.SlotID.seieki_hara},
+    {"seieki_face",TBody.SlotID.seieki_face},
+    {"seieki_mune",TBody.SlotID.seieki_mune},
+    {"seieki_hip",TBody.SlotID.seieki_hip},
+    {"seieki_ude",TBody.SlotID.seieki_ude},
+    {"seieki_ashi",TBody.SlotID.seieki_ashi},
+    {"accNipL",TBody.SlotID.accNipL},
+    {"accMiMiL",TBody.SlotID.accMiMiL},
+    {"accKamiSubL",TBody.SlotID.accKamiSubL},
+    {"accKami_2_",TBody.SlotID.accKami_2_},
+    {"accKami_3_",TBody.SlotID.accKami_3_},
+    {"HandItemL",TBody.SlotID.HandItemL},
+    {"underhair",TBody.SlotID.underhair},
+    {"moza",TBody.SlotID.moza},
+    {"end",TBody.SlotID.end},
+                                         };
 
         private void SetPreset(Maid maid, string fileName)
         {
@@ -98,6 +161,9 @@ namespace COM3D2.ComboCount.Plugin
                         maid.SetUpModel(fileName);
 //                                    Menu.ProcScript(maid,fileName,false);
 //                                    maid.AllProcPropSeqStart();
+                    }
+                    else{
+                        maid.body0.SetMask(slodIDdic[fileName],false);
                     }
                     presetPos[maidNo]++;
                 }

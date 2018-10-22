@@ -1,26 +1,26 @@
 <ComboCount>
     <MenuList maidNo="0">
-		<Menu Combo="10" File="_I_onepiece_del.menu"/>
-		<Menu Combo="25" File="_I_mizugi_del.menu"/>
-		<Menu Combo="40" File="_I_wear_del.menu"/>
-		<Menu Combo="55" File="_I_skirt_del.menu"/>
-		<Menu Combo="70" File="_I_bra_del.menu"/>
-		<Menu Combo="85" File="_I_panz_del.menu"/>
+		<Menu Combo="10" File="onepiece"/>
+		<Menu Combo="25" File="mizugi"/>
+		<Menu Combo="40" File="wear"/>
+		<Menu Combo="55" File="skirt"/>
+		<Menu Combo="70" File="bra"/>
+		<Menu Combo="85" File="panz"/>
     </MenuList>
     <MenuList maidNo="1">
-		<Menu Combo="15" File="_I_onepiece_del.menu"/>
-		<Menu Combo="30" File="_I_mizugi_del.menu"/>
-		<Menu Combo="45" File="_I_wear_del.menu"/>
-		<Menu Combo="60" File="_I_skirt_del.menu"/>
-		<Menu Combo="75" File="_I_bra_del.menu"/>
-		<Menu Combo="90" File="_I_panz_del.menu"/>
+		<Menu Combo="15" File="onepiece"/>
+		<Menu Combo="30" File="mizugi"/>
+		<Menu Combo="45" File="wear"/>
+		<Menu Combo="60" File="skirt"/>
+		<Menu Combo="75" File="bra"/>
+		<Menu Combo="90" File="panz"/>
     </MenuList>
     <MenuList maidNo="2">
-		<Menu Combo="20" File="_I_onepiece_del.menu"/>
-		<Menu Combo="35" File="_I_mizugi_del.menu"/>
-		<Menu Combo="50" File="_I_wear_del.menu"/>
-		<Menu Combo="65" File="_I_skirt_del.menu"/>
-		<Menu Combo="80" File="_I_bra_del.menu"/>
-		<Menu Combo="95" File="_I_panz_del.menu"/>
+		<Menu Combo="20" File="onepiece"/>
+		<Menu Combo="35" File="mizugi"/>
+		<Menu Combo="50" File="wear"/>
+		<Menu Combo="65" File="skirt"/>
+		<Menu Combo="80" File="bra"/>
+		<Menu Combo="95" File="panz"/>
     </MenuList>
 </ComboCount>
