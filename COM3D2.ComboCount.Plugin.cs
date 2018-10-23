@@ -11,7 +11,7 @@ using UnityInjector.Attributes;
 namespace COM3D2.ComboCount.Plugin
 {
     [PluginFilter("COM3D2x64"),
-     PluginName("COM3D2.ComboCount.Plugin"), PluginVersion("0.0.0.2")]
+     PluginName("COM3D2.ComboCount.Plugin"), PluginVersion("0.0.0.3")]
 
     public class ComboCount : PluginBase
     {
@@ -19,6 +19,7 @@ namespace COM3D2.ComboCount.Plugin
         private Maid maid;
         private int iSceneLevel;
         private DanceMain danceMain = null;
+        private bool resetFlag;
 
         private string[] tagItemChanges =
         {
@@ -128,6 +129,7 @@ namespace COM3D2.ComboCount.Plugin
             for(int maidNo = 0; maidNo < MAX_LISTED_MAID; maidNo++){
                 presetPos[maidNo] = 0;
             }
+            resetFlag = true;
         }
 
         public void Start()
@@ -137,6 +139,15 @@ namespace COM3D2.ComboCount.Plugin
         public void Update()
         {
             if(danceMain == null) return;
+
+            if(resetFlag){
+                for(int maidNo = 0; maidNo < MAX_LISTED_MAID; maidNo++){
+                    maid = GameMain.Instance.CharacterMgr.GetMaid(maidNo);
+                    if(maid == null) break;
+                    maid.body0.SetMaskMode(TBody.MaskMode.None);
+                    resetFlag = false;
+                }
+            }
 
             nowCombo = Score_Mgr.Instance.GetCombo(DanceBattle_Mgr.CharaType.Player);
 
